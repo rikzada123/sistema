@@ -30,6 +30,15 @@ class Program
                     Console.WriteLine("|            CADASTRAR ALUNO                |");
                     Console.Write("\nDigite o nome do aluno: ");
                     string nome = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(nome))
+                    {
+                        Console.WriteLine("\nNome inválido! Não pode ser vazio.");
+                        Console.WriteLine("Aperta qualquer tecla para continuar!");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
                     nomes[quantidadeAlunos] = nome;
 
                     double soma = 0;
